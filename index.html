@@ -164,6 +164,45 @@
             background: #e8e4d8;
         }
         
+        .social-section {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border-color);
+        }
+        
+        .btn-instagram {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.55rem;
+            background: #eae6da;
+            color: var(--green);
+            border: 1px solid #c5d2c6;
+            padding: 0.65rem 1.25rem;
+            border-radius: 8px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            text-decoration: none;
+            letter-spacing: 0.03em;
+            transition: all 0.2s ease;
+        }
+        
+        .btn-instagram:hover {
+            background: var(--green);
+            color: var(--cream);
+            border-color: var(--green);
+        }
+        
+        .btn-instagram:hover .instagram-icon {
+            fill: var(--cream);
+        }
+        
+        .instagram-icon {
+            width: 18px;
+            height: 18px;
+            fill: var(--green);
+            transition: fill 0.2s ease;
+        }
+        
         .departments {
             display: flex;
             flex-wrap: wrap;
@@ -201,6 +240,21 @@
             border-top: 1px solid var(--border-color);
             color: #657067;
             font-size: .78rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        footer a {
+            color: #657067;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        footer a:hover {
+            color: var(--green);
         }
         
         @media (max-width: 720px) {
@@ -228,7 +282,7 @@
             <a href="index.html" class="site-title">Pomona Spatial Justice Collaborative</a>
             <nav>
                 <a href="index.html" class="active">Home</a>
-                <a href="open-lectures.html">Open Lectures</a>
+                <a href="open-episodes.html">Open Lectures</a>
                 <a href="episodes.html">Poly Planning Podcast</a>
             </nav>
         </header>
@@ -240,17 +294,28 @@
                     PSJC invites academics, activists, architects, and artists to address inequitable distributions of resources and collectively reimagine place-based injustices through formal and informal planning and design.</p>
 
                 <div class="actions">
-                    <a href="open-lectures.html" class="btn-primary">Watch Open Lectures →</a>
+                    <a href="open-episodes.html" class="btn-primary">Explore Open Lectures →</a>
                     <a href="episodes.html" class="btn-secondary">Listen to Podcast</a>
+                </div>
+
+                <div class="social-section">
+                    <a href="https://www.instagram.com/pomonasjc/" target="_blank" rel="noopener" class="btn-instagram">
+                        <svg class="instagram-icon" viewBox="0 0 24 24">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg> Follow @pomonasjc on Instagram
+                    </a>
                 </div>
 
                 <div class="departments" aria-label="Programs"><span>URP</span><span>ENV</span><span>CPP</span><span>SPICE Grant</span></div>
             </section>
             <div class="logo-frame">
-                <img class="logo" src="img/PSJC_logo_final.svg" alt="Pomona Spatial Justice Collaborative Logo">
+                <img class="logo" src="img/PSJC_logo_Final.svg" alt="Pomona Spatial Justice Collaborative Logo">
             </div>
         </main>
-        <footer>Pomona Spatial Justice Collaborative · Department of Urban and Regional Planning at Cal Poly Pomona</footer>
+        <footer>
+            <span>Pomona Spatial Justice Collaborative · Department of Urban and Regional Planning at Cal Poly Pomona</span>
+            <a href="https://www.instagram.com/pomonasjc/" target="_blank" rel="noopener">@pomonasjc</a>
+        </footer>
     </div>
 </body>
 
