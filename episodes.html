@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Podcast Episodes | Poly Planning Podcast</title>
+    <title>Poly Planning Podcast | Pomona Spatial Justice Collaborative</title>
 
     <!-- Stratos Adobe Font Kit -->
     <link rel="stylesheet" href="https://use.typekit.net/xmn0yeq.css">
@@ -56,6 +56,11 @@
             text-decoration: none;
         }
         
+        nav {
+            display: flex;
+            gap: .5rem;
+        }
+        
         nav a {
             color: var(--green);
             text-decoration: none;
@@ -68,33 +73,116 @@
             transition: background 0.2s ease;
         }
         
-        nav a:hover {
+        nav a:hover,
+        nav a.active {
             background: #e8e4d8;
         }
         
         main {
             flex: 1;
-            width: min(900px, 100%);
+            width: min(1000px, 100%);
             margin: auto;
             padding: clamp(2.5rem, 5vh, 4rem) clamp(1.5rem, 5vw, 4rem);
+        }
+        /* Hero / Header Section */
+        
+        .podcast-hero {
+            display: grid;
+            grid-template-columns: 1fr 240px;
+            gap: 2.5rem;
+            align-items: center;
+            padding-bottom: 2.5rem;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 2rem;
+        }
+        
+        .eyebrow {
+            margin: 0 0 0.75rem;
+            color: #547765;
+            font-size: .76rem;
+            font-weight: 600;
+            letter-spacing: .19em;
+            text-transform: uppercase;
         }
         
         .page-title {
             color: var(--green);
-            font-size: clamp(2.2rem, 5vw, 3.5rem);
+            font-size: clamp(2.4rem, 5vw, 3.8rem);
             font-weight: 600;
-            margin: 0 0 .5rem 0;
+            margin: 0 0 .75rem 0;
             letter-spacing: -.02em;
+            line-height: 1.05;
         }
         
-        .season-header {
-            color: var(--coral);
-            font-size: .9rem;
-            font-weight: 600;
-            letter-spacing: .12em;
-            text-transform: uppercase;
-            margin-bottom: 2.5rem;
+        .podcast-description {
+            color: #46534a;
+            font-size: clamp(1.05rem, 1.6vw, 1.2rem);
+            line-height: 1.65;
+            margin: 0 0 1.25rem 0;
         }
+        
+        .departments {
+            display: flex;
+            flex-wrap: wrap;
+            gap: .5rem;
+        }
+        
+        .departments span {
+            padding: .45rem .8rem;
+            border: 1px solid #c5d2c6;
+            border-radius: 99px;
+            color: var(--green);
+            font-size: .75rem;
+            font-weight: 600;
+            letter-spacing: .09em;
+        }
+        
+        .podcast-logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .podcast-logo {
+            width: 100%;
+            max-width: 220px;
+            aspect-ratio: 1;
+            object-fit: contain;
+            border-radius: 50%;
+        }
+        /* Tabs Navigation */
+        
+        .season-tabs {
+            display: flex;
+            gap: 0.75rem;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .season-tab {
+            padding: 0.5rem 1.2rem;
+            font-size: 0.88rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: var(--muted);
+            border-radius: 6px;
+            transition: all 0.2s ease;
+        }
+        
+        .season-tab.active {
+            background: var(--green);
+            color: var(--cream);
+        }
+        
+        .season-tab.disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        /* Episode Cards Grid */
         
         .episodes-grid {
             display: flex;
@@ -116,7 +204,7 @@
         }
         
         .episode-meta {
-            color: var(--muted);
+            color: var(--coral);
             font-size: .8rem;
             font-weight: 600;
             letter-spacing: .05em;
@@ -211,9 +299,34 @@
             border-top: 1px solid var(--border-color);
             color: #657067;
             font-size: .78rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        footer a {
+            color: #657067;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        footer a:hover {
+            color: var(--green);
         }
         
         @media (max-width: 720px) {
+            .podcast-hero {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            .podcast-logo-container {
+                order: -1;
+            }
+            .podcast-logo {
+                max-width: 160px;
+            }
             .episode-card {
                 padding: 1.25rem;
             }
@@ -227,15 +340,41 @@
 <body>
     <div class="page">
         <header>
-            <a href="index.html" class="site-title">Poly Planning Podcast</a>
+            <a href="index.html" class="site-title">Pomona Spatial Justice Collaborative</a>
             <nav>
-                <a href="index.html">← Home</a>
+                <a href="index.html">Home</a>
+                <a href="open-episodes.html">Open Lectures</a>
+                <a href="episodes.html" class="active">Poly Planning Podcast</a>
             </nav>
         </header>
-        <main>
-            <h1 class="page-title">Podcast Episodes</h1>
-            <div class="season-header">Fall 2025</div>
 
+        <main>
+            <!-- Hero / Header Section -->
+            <section class="podcast-hero">
+                <div>
+                    <p class="eyebrow">Scrutinize · Speculate · Spatialize</p>
+                    <h1 class="page-title">Poly Planning Podcast</h1>
+                    <p class="podcast-description">
+                        Learning by podcasting. A repository for planner's ideas and actions in pursuit of social-spatial justice. Planner interviews by MURP students.
+                    </p>
+                    <div class="departments" aria-label="Programs">
+                        <span>URP</span>
+                        <span>ENV</span>
+                        <span>CPP</span>
+                    </div>
+                </div>
+                <div class="podcast-logo-container">
+                    <img class="podcast-logo" src="img/ppp.svg" alt="Poly Planning Podcast Logo">
+                </div>
+            </section>
+
+            <!-- Season Navigation Tabs -->
+            <nav class="season-tabs" aria-label="Podcast Seasons">
+                <a href="episodes.html" class="season-tab active">Fall 2025 Episodes</a>
+                <span class="season-tab disabled">Spring 2026 (Upcoming)</span>
+            </nav>
+
+            <!-- Fall 2025 Episodes List -->
             <div class="episodes-grid">
 
                 <!-- Episode 1 -->
@@ -642,7 +781,7 @@
                     <div class="episode-meta">Episode 20 · Fall 2025</div>
                     <h2 class="episode-title">Interview with Jason Garcia-LoBue, Planning & Permit Manager (Tulare County)</h2>
                     <p class="episode-description">
-                        Nicholas Murphy (MURP 2027) interviews Jason Garcia-LoBue, Planning & Permit Manager for Tulare Couty. They discussed the technical craft necessary for administrative work, balancing revenue generation with mitigating negative externalities for a collective
+                        Nicholas Murphy (MURP 2027) interviews Jason Garcia-LoBue, Planning & Permit Manager for Tulare County. They discussed the technical craft necessary for administrative work, balancing revenue generation with mitigating negative externalities for a collective
                         good, and programs like Civic Sparks that address historical inequities and environmental injustices.
                     </p>
                     <div class="media-container">
@@ -723,8 +862,10 @@
 
             </div>
         </main>
+
         <footer>
-            Poly Planning Podcast
+            <span>Poly Planning Podcast · Pomona Spatial Justice Collaborative</span>
+            <a href="https://www.instagram.com/pomonasjc/" target="_blank" rel="noopener">@pomonasjc</a>
         </footer>
     </div>
 </body>
