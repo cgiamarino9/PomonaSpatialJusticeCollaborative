@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Open Lectures | Pomona Spatial Justice Collaborative</title>
+
+    <!-- Stratos Adobe Font Kit -->
+    <link rel="stylesheet" href="https://use.typekit.net/xmn0yeq.css">
+
+    <style>
+         :root {
+            --green: #184638;
+            --cream: #f7f5ee;
+            --coral: #e98b6c;
+            --muted: #56645a;
+            --card-bg: #ffffff;
+            --border-color: #dce1d8;
+        }
+        
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background: var(--cream);
+            color: #26332a;
+            font-family: "stratos", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+        
+        .page {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        header {
+            padding: 1.35rem clamp(1.25rem, 6vw, 5.5rem);
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .site-title {
+            color: var(--green);
+            font-size: .85rem;
+            font-weight: 600;
+            letter-spacing: .13em;
+            text-transform: uppercase;
+            text-decoration: none;
+        }
+        
+        nav {
+            display: flex;
+            gap: .5rem;
+        }
+        
+        nav a {
+            color: var(--green);
+            text-decoration: none;
+            font-size: .85rem;
+            font-weight: 600;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            padding: .4rem .8rem;
+            border-radius: 6px;
+            transition: background 0.2s ease;
+        }
+        
+        nav a:hover,
+        nav a.active {
+            background: #e8e4d8;
+        }
+        
+        main {
+            flex: 1;
+            width: min(960px, 100%);
+            margin: auto;
+            padding: clamp(2.5rem, 5vh, 4rem) clamp(1.5rem, 5vw, 4rem);
+        }
+        
+        .page-title {
+            color: var(--green);
+            font-size: clamp(2.2rem, 5vw, 3.5rem);
+            font-weight: 600;
+            margin: 0 0 .5rem 0;
+            letter-spacing: -.02em;
+        }
+        
+        .season-header {
+            color: var(--coral);
+            font-size: .9rem;
+            font-weight: 600;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            margin-bottom: 2.5rem;
+        }
+        
+        .episodes-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+        }
+        
+        .episode-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+            transition: border-color 0.2s ease;
+        }
+        
+        .episode-card:hover {
+            border-color: var(--green);
+        }
+        
+        .episode-meta {
+            color: var(--muted);
+            font-size: .8rem;
+            font-weight: 600;
+            letter-spacing: .05em;
+            text-transform: uppercase;
+            margin-bottom: .5rem;
+        }
+        
+        .episode-title {
+            color: var(--green);
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin: 0 0 .85rem 0;
+            line-height: 1.25;
+        }
+        
+        .episode-description {
+            color: #46534a;
+            font-size: 1.02rem;
+            line-height: 1.65;
+            margin: 0 0 1.5rem 0;
+        }
+        
+        .panelists-section {
+            margin: 1.5rem 0 2rem 0;
+            border-top: 1px solid var(--border-color);
+            padding-top: 1.25rem;
+        }
+        
+        .panelists-title {
+            font-size: .85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: .1em;
+            color: var(--coral);
+            margin-bottom: 1rem;
+        }
+        
+        .panelist-bio {
+            margin-bottom: 1.15rem;
+            font-size: .95rem;
+            line-height: 1.6;
+            color: #3b463f;
+        }
+        
+        .panelist-bio strong {
+            color: var(--green);
+        }
+        
+        .media-container {
+            background: #f2f4f0;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.25rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.85rem;
+        }
+        
+        .media-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .video-label {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--green);
+        }
+        
+        .video-icon {
+            width: 16px;
+            height: 16px;
+            fill: currentColor;
+        }
+        
+        .stream-link {
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: var(--green);
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 0.4rem 0.85rem;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        
+        .stream-link:hover {
+            background: var(--green);
+            color: var(--cream);
+            border-color: var(--green);
+        }
+        
+        .iframe-wrapper {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            min-height: 380px;
+            background: #000000;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1);
+        }
+        
+        .iframe-wrapper iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        
+        footer {
+            padding: 1.25rem clamp(1.25rem, 6vw, 5.5rem);
+            border-top: 1px solid var(--border-color);
+            color: #657067;
+            font-size: .78rem;
+        }
+        
+        @media (max-width: 720px) {
+            .episode-card {
+                padding: 1.25rem;
+            }
+            .iframe-wrapper {
+                min-height: 220px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page">
+        <header>
+            <a href="index.html" class="site-title">Pomona Spatial Justice Collaborative</a>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="open-episodes.html" class="active">Open Lectures</a>
+                <a href="episodes.html">Poly Planning Podcast</a>
+            </nav>
+        </header>
+        <main>
+            <h1 class="page-title">Open Lecture Series</h1>
+            <div class="season-header">Fall 2026 Recordings</div>
+
+            <div class="episodes-grid">
+
+                <!-- Lecture 1 -->
+                <article class="episode-card">
+                    <div class="episode-meta">Open Lecture 1 · Fall 2026</div>
+                    <h2 class="episode-title">Class in Session: Skateboarder Activism and Spot Preservation as DIY Politics</h2>
+                    <p class="episode-description">
+                        We will learn about the history of this accidentally iconic skate spot, various activist campaigns to decriminalize skateboarding, and ongoing advocacy to ensure that leisure activities are preserved in future plans at The Courthouse.
+                    </p>
+
+                    <div class="panelists-section">
+                        <div class="panelists-title">Panelists</div>
+
+                        <p class="panelist-bio">
+                            <strong>Mackenzie Eisenhour</strong> — Born in Brussels, Belgium, and raised in Norway and France, Mackenzie Eisenhour moved to California to attend UCLA to pursue a BFA in graphic design. He was associate editor for Skateboarder
+                            Magazine from 2001 to 2004, and is a contributing editor to Transworld Skateboarding Magazine. His most recent book with Rizzoli, <em>1000 Skateboards</em>, catalogs the evolution of skateboard shapes and graphics to illustrate
+                            the progression of the culture from backyard pools and schoolyards to all spaces in the built environment. He recently hosted a retrospective of skate mag covers and advertisements at The Courthouse and will provide us with
+                            a historical overview of the site and its transformation into a sacred skate space.
+                        </p>
+
+                        <p class="panelist-bio">
+                            <strong>Dr. Greg Snyder</strong> — Professor of Sociology at Baruch College in New York City holding a PhD in Sociology from the New School for Social Research. He hails from America’s Dairyland, is brother to Aaron, a former
+                            Shorty’s pro skateboarder, and currently serves on the Board of Directors for the College Skateboarding Educational Foundation. He is the author of <em>Skateboarding LA</em> (2017, NYU Press), a sweeping ethnography arguing
+                            that skateboarding has transformed into a legitimate subcultural career to pursue creative, entrepreneurial activities that strengthen marginalized groups’ politics in accessing city space. He will discuss this in his talk,
+                            specifically from a chapter entitled “Skateboard Activism.”
+                        </p>
+
+                        <p class="panelist-bio">
+                            <strong>Alec Beck</strong> — Professional skateboarder, skatepark designer, Olympic skateboarding coach, and Director of Skate & Special Projects with The Skatepark Project (formerly the Tony Hawk Foundation). Over a decade
+                            of advocacy work with friends and government agencies resulted in new built environments and legalized historic skate spaces, including Stoner Plaza and the West LA Courthouse. He wrote the <em>Skatepark Best Practices Guide</em>                            and has provided guidance and funding to over 650 skateparks across all 50 states. Alec will discuss the need for public space activism, corporate tie-ins, political savvy, effective community engagement, and surviving advocacy
+                            with an open heart.
+                        </p>
+                    </div>
+
+                    <div class="media-container">
+                        <div class="media-header">
+                            <div class="video-label">
+                                <svg class="video-icon" viewBox="0 0 24 24"><path d="M21 6h-7.59l3.29-3.29L16 1.41 11.41 6H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm0 14H3V8h18v12zM9 10v8l7-4z"/></svg> Full Lecture Video Recording
+                            </div>
+                            <a href="https://streaming.cpp.edu/media/t/1_yt7col1f" target="_blank" rel="noopener" class="stream-link">CPP Media Player ↗</a>
+                        </div>
+                        <div class="iframe-wrapper">
+                            <iframe src="https://streaming.cpp.edu/embed/secure/iframe/entryId/1_yt7col1f" allowfullscreen webkitallowfullscreen mozAllowFullScreen frameborder="0" title="Open Lecture 1 Video"></iframe>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Lecture 2 -->
+                <article class="episode-card">
+                    <div class="episode-meta">Open Lecture 2 · Fall 2026</div>
+                    <h2 class="episode-title">Perspective Drawing: Local Murals and Public Art as Activation</h2>
+                    <p class="episode-description">
+                        This lecture examines the role of local and Indigenous art in activating public spaces. Specifically, artists spatially focused their paintings according to the plaza’s proximity to the ocean. Symbolically, their visually activated walls spoke to themes
+                        of cultural and historical resiliency, community creativity, environmental sustainability, public persistence, and political resistance to private erasure. We will discuss how murals and graffiti help preserve the history, culture,
+                        and meaning of an overlooked plaza and vacant place.
+                    </p>
+
+                    <div class="panelists-section">
+                        <div class="panelists-title">Panelists</div>
+
+                        <p class="panelist-bio">
+                            <strong>Monica Zavala</strong> — An enrolled member of the Gabrielino/Tongva Nation, Acjachemen, and Chicana who finds deep inspiration in her cultural heritage, weaving stories and traditions passed down through generations
+                            into her artwork. Specializing in illustration, painting, murals, sculpture, creative writing, and digital art, she passionately collaborates with Native communities, documenting their issues, traditions, and ceremonial practices.
+                        </p>
+
+                        <p class="panelist-bio">
+                            <strong>April Jones</strong> — Award-winning artist, documentary filmmaker, and impact journalist. Jones uses immersive journalism and documentary storytelling as tools for community organizing, civic engagement, and challenging
+                            systems that limit access to skateboarding. For more than a decade, Jones has built a body of fieldwork documenting DIY skateparks and community-built spaces around the world, revealing how communities create new models of
+                            belonging in response to institutional neglect.
+                        </p>
+
+                        <p class="panelist-bio">
+                            <strong>Doré Kittrell</strong> — Los Angeles-based visual artist and graphic illustrator who utilizes color, light, and motion to evoke feelings of nostalgia while conveying a vision of the future. Her aesthetic blends childhood
+                            memories with elements of street art to produce a vibrant, expressive style across illustration, fine art, graphic design, motion graphics, 3D animation, and public art.
+                        </p>
+
+                        <p class="panelist-bio">
+                            <strong>Braulio “Lalo” Beltran</strong> — Los Angeles-based artist, curator, and lead organizer of Meeting of Styles Los Angeles. With deep roots in graffiti culture, he has dedicated his work to creating spaces where artists
+                            can collaborate, gain exposure, and contribute to the city’s creative landscape, bridging underground art culture with the broader community.
+                        </p>
+
+                        <p class="panelist-bio">
+                            <strong>Geoff Mcfetridge</strong> — LA-based artist and designer who graduated from the Alberta College of Art and Cal Arts (BFA/MFA). His work features colorful, bold, flat colors with fine lines and minimalist puzzle-like
+                            forms seen in films like <em>Her</em> and <em>Where the Wild Things Are</em>, Metro stations, and SoFi Stadium. He is the subject of the 2023 documentary <em>Geoff Mcfetridge: Drawing a Life</em>. At The Courthouse, he collaborated
+                            with Nike for a mural in 2014 and recently completed “Half Floating West” for the February 2026 Converse architectural improvement event.
+                        </p>
+                    </div>
+
+                    <div class="media-container">
+                        <div class="media-header">
+                            <div class="video-label">
+                                <svg class="video-icon" viewBox="0 0 24 24"><path d="M21 6h-7.59l3.29-3.29L16 1.41 11.41 6H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm0 14H3V8h18v12zM9 10v8l7-4z"/></svg> Full Lecture Video Recording
+                            </div>
+                            <a href="https://streaming.cpp.edu/media/t/1_afe72xoo" target="_blank" rel="noopener" class="stream-link">CPP Media Player ↗</a>
+                        </div>
+                        <div class="iframe-wrapper">
+                            <iframe src="https://streaming.cpp.edu/embed/secure/iframe/entryId/1_afe72xoo" allowfullscreen webkitallowfullscreen mozAllowFullScreen frameborder="0" title="Open Lecture 2 Video"></iframe>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Lecture 3 -->
+                <article class="episode-card">
+                    <div class="episode-meta">Open Lecture 3 · Fall 2026</div>
+                    <h2 class="episode-title">Development Schemes: Diverse Visions and Proposals as Contested Process</h2>
+                    <p class="episode-description">
+                        The final open lecture examines the socially and politically diverse ideas for the site’s future, affected by economic fluctuations and financial constraints. We will hear from a community-oriented designer with preservation in mind, a graphic design
+                        and neighborhood council member with local knowledge, a lead architect whose accepted mixed-use future rendering ran into barriers, and a pro-housing advocate’s insights on producing units to address the ongoing affordability crisis.
+                    </p>
+
+                    <div class="panelists-section">
+                        <div class="panelists-title">Panelists</div>
+
+                        <p class="panelist-bio">
+                            <strong>Christopher James Alexander</strong> — Storyteller, strategist, designer, artist, and founder of CJA Creative Collaborations LLC. Formerly a curator of architecture and design at the Getty Research Institute, Chris
+                            co-curated major exhibitions including <em>Overdrive: L.A. Constructs the Future, 1940–1990</em> and author of <em>Julius Shulman’s Los Angeles</em>. He holds a Master of Architecture degree from UCLA.
+                        </p>
+
+                        <p class="panelist-bio">
+                            <strong>Walton Chiu</strong> — Graphic designer who designs typefaces, systems, products, events, and exhibitions. His practice explores how graphic design contributes to civic institutions, placemaking, and community planning
+                            through his embedded position within the WLA Sawtelle Neighborhood Council, collaborating with local communities, public officials, and developers to reimagine the West LA Civic Center’s future public use.
+                        </p>
+
+                        <p class="panelist-bio">
+                            <strong>Nathan Bishop AIA, LEED AP</strong> — Design Partner-in-Charge at KoningEizenberg Architecture. Nathan oversees the firm’s major projects with a focus on social inclusivity, climate change, and resetting relationships
+                            between buildings and shared public space. He teaches design, architectural history, and theory, and has served on the Board of Directors for the LA Forum for Art and Architecture and AIA Los Angeles.
+                        </p>
+
+                        <p class="panelist-bio">
+                            <strong>Toby Muresianu</strong> — Chair of Westside for Everyone, a volunteer community group fighting to end LA's housing crisis through affordable, sustainable, and welcoming community advocacy. He is also a writer and content
+                            creator whose work has appeared on NPR, the LA Daily News, and been viewed millions of times online.
+                        </p>
+                    </div>
+
+                    <div class="media-container">
+                        <div class="media-header">
+                            <div class="video-label">
+                                <svg class="video-icon" viewBox="0 0 24 24"><path d="M21 6h-7.59l3.29-3.29L16 1.41 11.41 6H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm0 14H3V8h18v12zM9 10v8l7-4z"/></svg> Lecture Video Recording
+                            </div>
+                            <a href="#" class="stream-link">Recording Available Soon</a>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </main>
+        <footer>
+            Pomona Spatial Justice Collaborative · Open Lecture Series Recordings
+        </footer>
+    </div>
+</body>
+
+</html>

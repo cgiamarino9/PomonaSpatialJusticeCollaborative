@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Poly Planning Podcast</title>
+    <title>Pomona Spatial Justice Collaborative</title>
 
     <!-- Stratos Adobe Font Kit -->
     <link rel="stylesheet" href="https://use.typekit.net/xmn0yeq.css">
@@ -55,6 +55,11 @@
             text-decoration: none;
         }
         
+        nav {
+            display: flex;
+            gap: .5rem;
+        }
+        
         nav a {
             color: var(--green);
             text-decoration: none;
@@ -67,7 +72,8 @@
             transition: background 0.2s ease;
         }
         
-        nav a:hover {
+        nav a:hover,
+        nav a.active {
             background: #e8e4d8;
         }
         
@@ -135,9 +141,27 @@
             transition: transform 0.2s ease, background 0.2s ease;
         }
         
+        .btn-secondary {
+            display: inline-block;
+            background: transparent;
+            color: var(--green);
+            border: 1px solid var(--green);
+            padding: .85rem 1.6rem;
+            border-radius: 8px;
+            font-size: .95rem;
+            font-weight: 600;
+            text-decoration: none;
+            letter-spacing: .02em;
+            transition: background 0.2s ease;
+        }
+        
         .btn-primary:hover {
             background: #103227;
             transform: translateY(-2px);
+        }
+        
+        .btn-secondary:hover {
+            background: #e8e4d8;
         }
         
         .departments {
@@ -167,10 +191,9 @@
         
         .logo {
             position: relative;
-            width: min(100%, 300px);
+            width: min(100%, 320px);
             aspect-ratio: 1;
-            object-fit: cover;
-            border-radius: 50%;
+            object-fit: contain;
         }
         
         footer {
@@ -202,28 +225,32 @@
 <body>
     <div class="page">
         <header>
-            <a href="index.html" class="site-title">Poly Planning Podcast</a>
+            <a href="index.html" class="site-title">Pomona Spatial Justice Collaborative</a>
             <nav>
-                <a href="episodes.html">Podcast Episodes</a>
+                <a href="index.html" class="active">Home</a>
+                <a href="open-lectures.html">Open Lectures</a>
+                <a href="episodes.html">Poly Planning Podcast</a>
             </nav>
         </header>
         <main>
             <section aria-labelledby="welcome-title">
-                <p class="eyebrow">Scrutinize · Speculate · Spatialize</p>
-                <h1 id="welcome-title">Planning a more just <span>future.</span></h1>
-                <p class="description">Learning by podcasting. A repository for planners’ ideas and actions in pursuit of social-spatial justice. Planner interviews by MURP students.</p>
+                <p class="eyebrow">Cal Poly Pomona · Department of Urban & Regional Planning</p>
+                <h1 id="welcome-title">Reimagining place-based <span>injustices.</span></h1>
+                <p class="description">The Pomona Spatial Justice Collaborative (PSJC) is a teaching and research initiative housed in the Department of Urban and Regional Planning and supported through SPICE Grant funding by Cal Poly Pomona. Led by Director Chris Giamarino,
+                    PSJC invites academics, activists, architects, and artists to address inequitable distributions of resources and collectively reimagine place-based injustices through formal and informal planning and design.</p>
 
                 <div class="actions">
-                    <a href="episodes.html" class="btn-primary">Browse Fall 2025 Episodes →</a>
+                    <a href="open-lectures.html" class="btn-primary">Watch Open Lectures →</a>
+                    <a href="episodes.html" class="btn-secondary">Listen to Podcast</a>
                 </div>
 
-                <div class="departments" aria-label="Programs"><span>URP</span><span>ENV</span><span>CPP</span></div>
+                <div class="departments" aria-label="Programs"><span>URP</span><span>ENV</span><span>CPP</span><span>SPICE Grant</span></div>
             </section>
             <div class="logo-frame">
-                <img class="logo" src="img/ppp.svg" alt="Poly Planning Podcast logo">
+                <img class="logo" src="img/PSJC_logo_final.svg" alt="Pomona Spatial Justice Collaborative Logo">
             </div>
         </main>
-        <footer>Conversations for social-spatial justice</footer>
+        <footer>Pomona Spatial Justice Collaborative · Department of Urban and Regional Planning at Cal Poly Pomona</footer>
     </div>
 </body>
 
