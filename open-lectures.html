@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Open Lectures | Pomona Spatial Justice Collaborative</title>
+    <title>Open Lecture Series | Pomona Spatial Justice Collaborative</title>
 
     <!-- Stratos Adobe Font Kit -->
     <link rel="stylesheet" href="https://use.typekit.net/xmn0yeq.css">
@@ -80,27 +80,76 @@
         
         main {
             flex: 1;
-            width: min(960px, 100%);
+            width: min(1000px, 100%);
             margin: auto;
             padding: clamp(2.5rem, 5vh, 4rem) clamp(1.5rem, 5vw, 4rem);
+        }
+        /* Hero / Header Section */
+        
+        .hero-section {
+            display: grid;
+            grid-template-columns: 1fr 260px;
+            gap: 2.5rem;
+            align-items: center;
+            padding-bottom: 2.5rem;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 2.5rem;
+        }
+        
+        .eyebrow {
+            margin: 0 0 0.75rem;
+            color: #547765;
+            font-size: .76rem;
+            font-weight: 600;
+            letter-spacing: .19em;
+            text-transform: uppercase;
         }
         
         .page-title {
             color: var(--green);
-            font-size: clamp(2.2rem, 5vw, 3.5rem);
+            font-size: clamp(2.4rem, 5vw, 3.8rem);
             font-weight: 600;
-            margin: 0 0 .5rem 0;
+            margin: 0 0 .75rem 0;
             letter-spacing: -.02em;
+            line-height: 1.05;
         }
         
-        .season-header {
-            color: var(--coral);
-            font-size: .9rem;
-            font-weight: 600;
-            letter-spacing: .12em;
-            text-transform: uppercase;
-            margin-bottom: 2.5rem;
+        .hero-description {
+            color: #46534a;
+            font-size: clamp(1.05rem, 1.6vw, 1.2rem);
+            line-height: 1.65;
+            margin: 0 0 1.25rem 0;
         }
+        
+        .departments {
+            display: flex;
+            flex-wrap: wrap;
+            gap: .5rem;
+        }
+        
+        .departments span {
+            padding: .45rem .8rem;
+            border: 1px solid #c5d2c6;
+            border-radius: 99px;
+            color: var(--green);
+            font-size: .75rem;
+            font-weight: 600;
+            letter-spacing: .09em;
+        }
+        
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .hero-logo {
+            width: 100%;
+            max-width: 240px;
+            aspect-ratio: 1;
+            object-fit: contain;
+        }
+        /* Lecture Cards Grid */
         
         .episodes-grid {
             display: flex;
@@ -122,7 +171,7 @@
         }
         
         .episode-meta {
-            color: var(--muted);
+            color: var(--coral);
             font-size: .8rem;
             font-weight: 600;
             letter-spacing: .05em;
@@ -244,9 +293,34 @@
             border-top: 1px solid var(--border-color);
             color: #657067;
             font-size: .78rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        footer a {
+            color: #657067;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        footer a:hover {
+            color: var(--green);
         }
         
         @media (max-width: 720px) {
+            .hero-section {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            .logo-container {
+                order: -1;
+            }
+            .hero-logo {
+                max-width: 180px;
+            }
             .episode-card {
                 padding: 1.25rem;
             }
@@ -263,19 +337,38 @@
             <a href="index.html" class="site-title">Pomona Spatial Justice Collaborative</a>
             <nav>
                 <a href="index.html">Home</a>
-                <a href="open-episodes.html" class="active">Open Lectures</a>
+                <a href="open-lectures.html" class="active">Open Lectures</a>
                 <a href="episodes.html">Poly Planning Podcast</a>
             </nav>
         </header>
-        <main>
-            <h1 class="page-title">Open Lecture Series</h1>
-            <div class="season-header">Fall 2026 Recordings</div>
 
+        <main>
+            <!-- Hero / Header Section -->
+            <section class="hero-section">
+                <div>
+                    <p class="eyebrow">Shared Surfaces · West LA Courthouse Plaza</p>
+                    <h1 class="page-title">Open Lecture Series</h1>
+                    <p class="hero-description">
+                        As part of PSJC’s inaugural year, we are hosting a three-part Open Lecture Series focused on the historically and culturally significant West LA Civic Center, colloquially known as The Courthouse. The Mid-Century Modern plaza is simultaneously a skateboarding
+                        spot, a canvas for Indigenous and local murals, a corridor for farmers’ markets and food pantries, a site of public-space advocacy, and an economically and administratively neglected area ripe for revitalization.
+                    </p>
+                    <div class="departments" aria-label="Programs">
+                        <span>URP 4830/5830</span>
+                        <span>LA 4111</span>
+                        <span>SPICE Grant</span>
+                    </div>
+                </div>
+                <div class="logo-container">
+                    <img class="hero-logo" src="img/PSJC_OL.svg" alt="PSJC Open Lecture Series Logo">
+                </div>
+            </section>
+
+            <!-- Lecture Cards Grid -->
             <div class="episodes-grid">
 
                 <!-- Lecture 1 -->
                 <article class="episode-card">
-                    <div class="episode-meta">Open Lecture 1 · Fall 2026</div>
+                    <div class="episode-meta">Lecture 1 · Fall 2026</div>
                     <h2 class="episode-title">Class in Session: Skateboarder Activism and Spot Preservation as DIY Politics</h2>
                     <p class="episode-description">
                         We will learn about the history of this accidentally iconic skate spot, various activist campaigns to decriminalize skateboarding, and ongoing advocacy to ensure that leisure activities are preserved in future plans at The Courthouse.
@@ -320,7 +413,7 @@
 
                 <!-- Lecture 2 -->
                 <article class="episode-card">
-                    <div class="episode-meta">Open Lecture 2 · Fall 2026</div>
+                    <div class="episode-meta">Lecture 2 · Fall 2026</div>
                     <h2 class="episode-title">Perspective Drawing: Local Murals and Public Art as Activation</h2>
                     <p class="episode-description">
                         This lecture examines the role of local and Indigenous art in activating public spaces. Specifically, artists spatially focused their paintings according to the plaza’s proximity to the ocean. Symbolically, their visually activated walls spoke to themes
@@ -374,7 +467,7 @@
 
                 <!-- Lecture 3 -->
                 <article class="episode-card">
-                    <div class="episode-meta">Open Lecture 3 · Fall 2026</div>
+                    <div class="episode-meta">Lecture 3 · Fall 2026</div>
                     <h2 class="episode-title">Development Schemes: Diverse Visions and Proposals as Contested Process</h2>
                     <p class="episode-description">
                         The final open lecture examines the socially and politically diverse ideas for the site’s future, affected by economic fluctuations and financial constraints. We will hear from a community-oriented designer with preservation in mind, a graphic design
@@ -417,8 +510,10 @@
 
             </div>
         </main>
+
         <footer>
-            Pomona Spatial Justice Collaborative · Open Lecture Series Recordings
+            <span>Pomona Spatial Justice Collaborative · Open Lecture Series</span>
+            <a href="https://www.instagram.com/pomonasjc/" target="_blank" rel="noopener">@pomonasjc</a>
         </footer>
     </div>
 </body>
