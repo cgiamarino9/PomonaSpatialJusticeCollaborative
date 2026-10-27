@@ -40,7 +40,7 @@
         }
         
         header {
-            padding: 1.35rem clamp(1.25rem, 6vw, 5.5rem);
+            padding: 0.85rem clamp(1rem, 5vw, 4rem);
             border-bottom: 1px solid var(--border-color);
             display: flex;
             justify-content: space-between;
@@ -49,27 +49,27 @@
         
         .site-title {
             color: var(--green);
-            font-size: .85rem;
+            font-size: .78rem;
             font-weight: 600;
-            letter-spacing: .13em;
+            letter-spacing: .12em;
             text-transform: uppercase;
             text-decoration: none;
         }
         
         nav {
             display: flex;
-            gap: .5rem;
+            gap: .35rem;
         }
         
         nav a {
             color: var(--green);
             text-decoration: none;
-            font-size: .85rem;
+            font-size: .75rem;
             font-weight: 600;
-            letter-spacing: .08em;
+            letter-spacing: .06em;
             text-transform: uppercase;
-            padding: .4rem .8rem;
-            border-radius: 6px;
+            padding: .3rem .65rem;
+            border-radius: 4px;
             transition: background 0.2s ease;
         }
         
@@ -80,61 +80,61 @@
         
         main {
             flex: 1;
-            width: min(1000px, 100%);
+            width: min(920px, 100%);
             margin: auto;
-            padding: clamp(2.5rem, 5vh, 4rem) clamp(1.5rem, 5vw, 4rem);
+            padding: clamp(1.75rem, 4vh, 3rem) clamp(1.25rem, 4vw, 3rem);
         }
-        /* Hero / Header Section */
+        /* Hero Section */
         
         .podcast-hero {
             display: grid;
-            grid-template-columns: 1fr 240px;
-            gap: 2.5rem;
+            grid-template-columns: 1fr 180px;
+            gap: 2rem;
             align-items: center;
-            padding-bottom: 2.5rem;
+            padding-bottom: 1.75rem;
             border-bottom: 1px solid var(--border-color);
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
         }
         
         .eyebrow {
-            margin: 0 0 0.75rem;
+            margin: 0 0 0.5rem;
             color: #547765;
-            font-size: .76rem;
+            font-size: .72rem;
             font-weight: 600;
-            letter-spacing: .19em;
+            letter-spacing: .15em;
             text-transform: uppercase;
         }
         
         .page-title {
             color: var(--green);
-            font-size: clamp(2.4rem, 5vw, 3.8rem);
+            font-size: clamp(1.8rem, 3.8vw, 2.6rem);
             font-weight: 600;
-            margin: 0 0 .75rem 0;
+            margin: 0 0 .5rem 0;
             letter-spacing: -.02em;
             line-height: 1.05;
         }
         
         .podcast-description {
             color: #46534a;
-            font-size: clamp(1.05rem, 1.6vw, 1.2rem);
-            line-height: 1.65;
-            margin: 0 0 1.25rem 0;
+            font-size: clamp(0.88rem, 1.2vw, 1.02rem);
+            line-height: 1.6;
+            margin: 0 0 1rem 0;
         }
         
         .departments {
             display: flex;
             flex-wrap: wrap;
-            gap: .5rem;
+            gap: .4rem;
         }
         
         .departments span {
-            padding: .45rem .8rem;
+            padding: .3rem .65rem;
             border: 1px solid #c5d2c6;
             border-radius: 99px;
             color: var(--green);
-            font-size: .75rem;
+            font-size: .7rem;
             font-weight: 600;
-            letter-spacing: .09em;
+            letter-spacing: .08em;
         }
         
         .podcast-logo-container {
@@ -145,30 +145,30 @@
         
         .podcast-logo {
             width: 100%;
-            max-width: 220px;
+            max-width: 160px;
             aspect-ratio: 1;
             object-fit: contain;
         }
-        /* Tabs Navigation */
+        /* Season Tabs */
         
         .season-tabs {
             display: flex;
-            gap: 0.75rem;
-            margin-bottom: 2rem;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
             border-bottom: 2px solid var(--border-color);
-            padding-bottom: 0.5rem;
+            padding-bottom: 0.4rem;
             flex-wrap: wrap;
         }
         
         .season-tab {
-            padding: 0.5rem 1.2rem;
-            font-size: 0.88rem;
+            padding: 0.4rem 0.95rem;
+            font-size: 0.78rem;
             font-weight: 600;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.04em;
             text-transform: uppercase;
             text-decoration: none;
             color: var(--muted);
-            border-radius: 6px;
+            border-radius: 4px;
             transition: all 0.2s ease;
         }
         
@@ -186,15 +186,15 @@
         .episodes-grid {
             display: flex;
             flex-direction: column;
-            gap: 2rem;
+            gap: 1.35rem;
         }
         
         .episode-card {
             background: var(--card-bg);
             border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 1.75rem;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+            border-radius: 8px;
+            padding: 1.25rem;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.02);
             transition: border-color 0.2s ease;
         }
         
@@ -204,36 +204,36 @@
         
         .episode-meta {
             color: var(--coral);
-            font-size: .8rem;
+            font-size: .72rem;
             font-weight: 600;
             letter-spacing: .05em;
             text-transform: uppercase;
-            margin-bottom: .5rem;
+            margin-bottom: .35rem;
         }
         
         .episode-title {
             color: var(--green);
-            font-size: 1.35rem;
+            font-size: 1.08rem;
             font-weight: 600;
-            margin: 0 0 .75rem 0;
+            margin: 0 0 .5rem 0;
             line-height: 1.3;
         }
         
         .episode-description {
             color: #46534a;
-            font-size: 1rem;
-            line-height: 1.6;
-            margin: 0 0 1.5rem 0;
+            font-size: .88rem;
+            line-height: 1.55;
+            margin: 0 0 1rem 0;
         }
         
         .media-container {
             background: #f2f4f0;
             border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 1rem;
+            border-radius: 8px;
+            padding: 0.75rem;
             display: flex;
             flex-direction: column;
-            gap: 0.75rem;
+            gap: 0.5rem;
         }
         
         .media-header {
@@ -245,10 +245,10 @@
         .audio-label {
             display: flex;
             align-items: center;
-            gap: 0.4rem;
-            font-size: 0.75rem;
+            gap: 0.35rem;
+            font-size: 0.72rem;
             font-weight: 600;
-            letter-spacing: 0.08em;
+            letter-spacing: 0.06em;
             text-transform: uppercase;
             color: var(--green);
         }
@@ -260,13 +260,13 @@
         }
         
         .stream-link {
-            font-size: 0.78rem;
+            font-size: 0.72rem;
             font-weight: 600;
             color: var(--green);
             background: var(--card-bg);
             border: 1px solid var(--border-color);
-            padding: 0.35rem 0.75rem;
-            border-radius: 6px;
+            padding: 0.28rem 0.6rem;
+            border-radius: 4px;
             text-decoration: none;
             transition: all 0.2s ease;
         }
@@ -280,9 +280,9 @@
         .iframe-wrapper {
             position: relative;
             width: 100%;
-            height: 170px;
+            height: 140px;
             background: #000000;
-            border-radius: 8px;
+            border-radius: 6px;
             overflow: hidden;
             box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1);
         }
@@ -294,15 +294,15 @@
         }
         
         footer {
-            padding: 1.25rem clamp(1.25rem, 6vw, 5.5rem);
+            padding: 1rem clamp(1rem, 5vw, 4rem);
             border-top: 1px solid var(--border-color);
             color: #657067;
-            font-size: .78rem;
+            font-size: .72rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
-            gap: 1rem;
+            gap: 0.75rem;
         }
         
         footer a {
@@ -316,21 +316,35 @@
         }
         
         @media (max-width: 720px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.6rem;
+                padding: 0.85rem 1.25rem;
+            }
+            nav {
+                width: 100%;
+                gap: 0.25rem;
+            }
+            nav a {
+                padding: 0.25rem 0.5rem;
+                font-size: 0.72rem;
+            }
             .podcast-hero {
                 grid-template-columns: 1fr;
-                gap: 1.5rem;
+                gap: 1.25rem;
             }
             .podcast-logo-container {
                 order: -1;
             }
             .podcast-logo {
-                max-width: 160px;
+                max-width: 130px;
             }
             .episode-card {
-                padding: 1.25rem;
+                padding: 1rem;
             }
             .iframe-wrapper {
-                height: 150px;
+                height: 130px;
             }
         }
     </style>
@@ -348,7 +362,7 @@
         </header>
 
         <main>
-            <!-- Hero / Header Section -->
+            <!-- Hero Section -->
             <section class="podcast-hero">
                 <div>
                     <p class="eyebrow">Scrutinize · Speculate · Spatialize</p>
@@ -673,10 +687,10 @@
                 <!-- Episode 15 -->
                 <article class="episode-card">
                     <div class="episode-meta">Episode 15 · Fall 2025</div>
-                    <h2 class="episode-title">Interview with Paul Herrmann, Senior Associate (Fehr & Peers)</h2>
+                    <h2 class="episode-title">Interview with Paul Herrmann, Senior Associate (Fehr &amp; Peers)</h2>
                     <p class="episode-description">
-                        Daniel Knott (MURP 2027) interviewed Paul Herrmann, Senior Associate and Planning Consultant at Fehr & Peers. They discussed how planners connect stakeholders with critical timeline expectations, bridge technical knowledge with logistical execution, negotiate
-                        competing interests, and craft persuasive narratives.
+                        Daniel Knott (MURP 2027) interviewed Paul Herrmann, Senior Associate and Planning Consultant at Fehr &amp; Peers. They discussed how planners connect stakeholders with critical timeline expectations, bridge technical knowledge with logistical execution,
+                        negotiate competing interests, and craft persuasive narratives.
                     </p>
                     <div class="media-container">
                         <div class="media-header">
@@ -778,10 +792,10 @@
                 <!-- Episode 20 -->
                 <article class="episode-card">
                     <div class="episode-meta">Episode 20 · Fall 2025</div>
-                    <h2 class="episode-title">Interview with Jason Garcia-LoBue, Planning & Permit Manager (Tulare County)</h2>
+                    <h2 class="episode-title">Interview with Jason Garcia-LoBue, Planning &amp; Permit Manager (Tulare County)</h2>
                     <p class="episode-description">
-                        Nicholas Murphy (MURP 2027) interviewed Jason Garcia-LoBue, Planning & Permit Manager for Tulare County. They discussed technical skills in municipal administration, balancing municipal revenue generation against negative development externalities, and
-                        leveraging programs like CivicSpark to confront environmental injustices and legacy inequities.
+                        Nicholas Murphy (MURP 2027) interviewed Jason Garcia-LoBue, Planning &amp; Permit Manager for Tulare County. They discussed technical skills in municipal administration, balancing municipal revenue generation against negative development externalities,
+                        and leveraging programs like CivicSpark to confront environmental injustices and legacy inequities.
                     </p>
                     <div class="media-container">
                         <div class="media-header">
